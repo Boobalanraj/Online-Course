@@ -9,12 +9,16 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@RequiredArgsConstructor
 public class UserDaoImpl implements UserDao {
 
     private final UserRepository userRepository;
 
     private final UserMapper mapper;
+
+    public UserDaoImpl(UserRepository userRepository,UserMapper mapper){
+        this.userRepository = userRepository;
+        this.mapper = mapper;
+    }
 
     @Override
     public void save(RegisterDto data) {

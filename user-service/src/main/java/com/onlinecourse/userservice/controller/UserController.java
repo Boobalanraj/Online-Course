@@ -1,6 +1,7 @@
 package com.onlinecourse.userservice.controller;
 
 import com.onlinecourse.userservice.dto.RegisterDto;
+import com.onlinecourse.userservice.model.User;
 import com.onlinecourse.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
