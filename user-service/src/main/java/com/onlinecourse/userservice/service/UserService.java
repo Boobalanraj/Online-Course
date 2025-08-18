@@ -7,4 +7,6 @@ public interface UserService {
 
     void save(RegisterDto data);
 
+//    public void save(User data);
+
 }
