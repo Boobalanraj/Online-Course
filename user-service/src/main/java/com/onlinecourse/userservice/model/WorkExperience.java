@@ -23,6 +23,6 @@ public class WorkExperience {
 
     @ManyToOne
     @JoinColumn(name="userId",referencedColumnName = "userId")
-    private User userId;
+    private User user;
 
 }

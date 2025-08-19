@@ -21,9 +21,9 @@ public class Education {
 
     private String major;
 
-    private double gradeOrPercentage;
+    private Double gradeOrPercentage;
 
     @ManyToOne
     @JoinColumn(name="userId",referencedColumnName = "userId")
-    private User userId;
+    private User user;
 }

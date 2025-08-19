@@ -1,25 +1,18 @@
-package com.onlinecourse.userservice.model;
+package com.onlinecourse.userservice.dto;
 
-import jakarta.persistence.*;
+import com.onlinecourse.userservice.model.WorkExperience;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Entity(name = "users")
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+@Data
+public class ResponseProfileDto {
 
     private String fullName;
-
-    private String password;
 
     private String roleLooking;
 
@@ -29,9 +22,7 @@ public class User {
 
     private boolean willingToRelocateIntoYourCountry;
 
-    @OneToMany(mappedBy = "user")
     private List<WorkExperience> workExperiences;
 
-    @OneToMany(mappedBy = "user")
-    private List<Education> educations;
+    private List<EducationDto> educations;
 }
