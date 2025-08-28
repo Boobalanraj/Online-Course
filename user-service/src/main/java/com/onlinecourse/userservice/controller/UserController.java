@@ -3,6 +3,7 @@ package com.onlinecourse.userservice.controller;
 import com.onlinecourse.userservice.dto.EducationDto;
 import com.onlinecourse.userservice.dto.RegisterDto;
 import com.onlinecourse.userservice.dto.ResponseProfileDto;
+import com.onlinecourse.userservice.dto.UserDto;
 import com.onlinecourse.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -36,4 +37,14 @@ public class UserController {
         return userService.updateEducation(educationDto,userId,educationId);
     }
 
+    @GetMapping("{userId}")
+    public ResponseProfileDto getUserData(@PathVariable Long userId){
+        return userService.getUserData(userId);
+    }
+
+    @PutMapping("{userId}/updateUser")
+    public ResponseProfileDto getUserData(@PathVariable Long userId, @RequestBody UserDto userDto){
+        return userService.updateUserData(userId,userDto);
+    }
+    
 }
